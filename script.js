@@ -123,4 +123,41 @@ a {
         margin: 0 10px;
         font-size: 14px;
     }
+    const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+            }
+
+        });
+
+    });
+
+    document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+const text = "Trainee Software Developer | Nimblix Technologies";
+let i = 0;
+
+function typing(){
+    if(i < text.length){
+        document.querySelector(".typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 60);
+    }
+}
+
+typing();
+
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el)=> observer.observe(el));
 }

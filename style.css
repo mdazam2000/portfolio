@@ -9,7 +9,14 @@ body {
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     color: white;
 }
+#home{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 
+}
 /* NAVBAR */
 
 nav {
@@ -118,9 +125,60 @@ a {
     h2{
         font-size: 30px;
     }
+/* SCROLL ANIMATION */
 
+.hidden{
+    opacity:0;
+    transform:translateY(60px);
+    transition: all 1s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* TYPING CURSOR */
+
+.cursor{
+    border-right:3px solid #00e6e6;
+    padding-right:5px;
+}
     nav a{
         margin: 0 10px;
         font-size: 14px;
+    }
+    #projects h3{
+        transition:0.3s;
+    }
+
+    #projects h3:hover{
+        transform:translateX(10px);
+        color:#00e6e6;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    nav a{
+        color:white;
+        text-decoration:none;
+        margin:0 20px;
+        font-weight:bold;
+        transition:0.3s ease;
+    }
+
+    nav a:hover{
+        color:#00e6e6;
+        transform: scale(1.1);
+    }
+    .hidden{
+        opacity:0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+    }
+
+    .show{
+        opacity:1;
+        transform: translateY(0);
     }
 }
